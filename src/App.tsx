@@ -8,11 +8,14 @@ import useInnerWidth from './Hooks/useInnerWidth';
 
 export type IState = {
   showLightBox: boolean;
+  imageIndex: number;
 };
 
 const App: React.FC = (): JSX.Element => {
   const [showLightBox, setShowLightBox] =
     useState<IState['showLightBox']>(false);
+
+  const [imageIndex, setImageIndex] = useState<IState['imageIndex']>(0);
 
   const screenWidth = useInnerWidth();
 
@@ -20,7 +23,15 @@ const App: React.FC = (): JSX.Element => {
 
   return (
     <div className="App">
-      <Provider value={{ showLightBox, setShowLightBox, isDesktopWidth }}>
+      <Provider
+        value={{
+          showLightBox,
+          setShowLightBox,
+          isDesktopWidth,
+          imageIndex,
+          setImageIndex,
+        }}
+      >
         <Wrapper additionalClass="page-wrapper">
           <HomePage />
         </Wrapper>

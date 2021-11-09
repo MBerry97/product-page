@@ -1,6 +1,8 @@
 .main {
   display: grid;
   grid-template-rows: 30rem calc(100% - 30rem);
+
+  max-width: 50rem;
 }
 
 @media only screen and (min-width: 1440px) {

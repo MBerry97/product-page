@@ -1,0 +1,27 @@
+.productImages-container {
+  border: 1px solid red;
+}
+
+.productImages-container img {
+  width: 100%;
+  height: 100%;
+}
+
+.productImages-container button {
+  position: absolute;
+  width: 4rem;
+  height: 4rem;
+}
+
+.productImages-container button:last-of-type {
+  position: absolute;
+  width: 4rem;
+  height: 4rem;
+  right: 0;
+}
+
+.productImage-carousel {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
