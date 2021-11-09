@@ -2,13 +2,11 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import './NavSidebar.css';
 
-import type { IState as Props } from '../../../../Pages/Homepage/Header/Header';
-
 type IProps = {
-  showFn: React.Dispatch<React.SetStateAction<Props['showSidebar']>>;
+  showSideBarFn: VoidFunction;
 };
 
-const NavSidebar: React.FC<IProps> = ({ showFn }): JSX.Element => {
+const NavSidebar: React.FC<IProps> = ({ showSideBarFn }): JSX.Element => {
   return (
     <motion.div
       className="navSidebar"
@@ -17,7 +15,7 @@ const NavSidebar: React.FC<IProps> = ({ showFn }): JSX.Element => {
       transition={{ duration: 0.5 }}
       exit={{ x: '-100%' }}
     >
-      <button type="button" onClick={() => showFn(false)}>
+      <button type="button" onClick={() => showSideBarFn()}>
         x
       </button>
     </motion.div>

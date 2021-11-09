@@ -4,17 +4,16 @@ import burgerMenu from '../../../Assets/images/icon-menu.svg';
 import cart from '../../../Assets/images/icon-cart.svg';
 import avatar from '../../../Assets/images/image-avatar.png';
 import './NavBar.css';
-import type { IState as Props } from '../../../Pages/Homepage/Header/Header';
 
 type IProps = {
-  showSideBarFn: React.Dispatch<React.SetStateAction<Props['showSidebar']>>;
+  showSideBarFn: VoidFunction;
 };
 
 const NavBar: React.FC<IProps> = ({ showSideBarFn }): JSX.Element => {
   return (
     <div className="navBar">
       <div>
-        <button type="button" onClick={() => showSideBarFn(true)}>
+        <button type="button" onClick={() => showSideBarFn()}>
           <img src={burgerMenu} alt="menu" />
         </button>
         <img src={logo} alt="logo" />
