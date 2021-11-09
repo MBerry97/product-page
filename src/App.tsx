@@ -4,6 +4,7 @@ import LightBox from './Components/Containers/LightBox/LightBox';
 import Wrapper from './Components/Containers/Wrapper/Wrapper';
 import HomePage from './Pages/Homepage/HomePage';
 import { Provider } from './Contexts/appContext';
+import useInnerWidth from './Hooks/useInnerWidth';
 
 export type IState = {
   showLightBox: boolean;
@@ -13,9 +14,13 @@ const App: React.FC = (): JSX.Element => {
   const [showLightBox, setShowLightBox] =
     useState<IState['showLightBox']>(false);
 
+  const screenWidth = useInnerWidth();
+
+  const isDesktopWidth = screenWidth >= 1440;
+
   return (
     <div className="App">
-      <Provider value={{ showLightBox, setShowLightBox }}>
+      <Provider value={{ showLightBox, setShowLightBox, isDesktopWidth }}>
         <Wrapper additionalClass="page-wrapper">
           <HomePage />
         </Wrapper>

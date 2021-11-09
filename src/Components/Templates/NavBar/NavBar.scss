@@ -1,3 +1,5 @@
+@import '../../../Styles/styles.scss';
+
 .navBar {
   height: 100%;
   display: flex;
@@ -20,5 +22,38 @@
   div:last-of-type img:last-of-type {
     width: 2.4rem;
     height: 2.4rem;
+  }
+
+  ul {
+    list-style: none;
+    display: flex;
+    margin: 0rem;
+
+    li {
+      margin-right: 3.2rem;
+      font-weight: $fontNormal;
+      font-size: 1.5rem;
+      color: $darkGrayBlue;
+    }
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .navBar {
+    border-bottom: 1px solid $lightGrayBlue;
+    padding: 0rem;
+
+    //avatar
+    div:last-of-type img:last-of-type {
+      width: 5rem;
+      height: 5rem;
+    }
+
+    > div {
+      //cart
+      img:first-of-type {
+        margin-right: 4.6rem;
+      }
+    }
   }
 }

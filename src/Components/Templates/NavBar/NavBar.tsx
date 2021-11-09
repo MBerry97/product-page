@@ -7,16 +7,26 @@ import './NavBar.css';
 
 type IProps = {
   showSideBarFn: VoidFunction;
+  renderNavListItems: () => JSX.Element;
+  isDesktopWidth: boolean;
 };
 
-const NavBar: React.FC<IProps> = ({ showSideBarFn }): JSX.Element => {
+const NavBar: React.FC<IProps> = ({
+  showSideBarFn,
+  renderNavListItems,
+  isDesktopWidth,
+}): JSX.Element => {
   return (
     <div className="navBar">
       <div>
-        <button type="button" onClick={() => showSideBarFn()}>
-          <img src={burgerMenu} alt="menu" />
-        </button>
+        {!isDesktopWidth && (
+          <button type="button" onClick={() => showSideBarFn()}>
+            <img src={burgerMenu} alt="menu" />
+          </button>
+        )}
         <img src={logo} alt="logo" />
+
+        {isDesktopWidth && renderNavListItems()}
       </div>
       <div>
         <img src={cart} alt="cart" />
