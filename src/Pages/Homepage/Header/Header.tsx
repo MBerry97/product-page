@@ -1,4 +1,5 @@
-import React, { useState, useContext } from 'react';
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useState, useContext, useEffect } from 'react';
 import { AnimatePresence } from 'framer-motion';
 import NavBar from '../../../Components/Templates/NavBar/NavBar';
 
@@ -14,17 +15,25 @@ type IContext = {
   setShowLightBox: React.Dispatch<
     React.SetStateAction<Context['showLightBox']>
   >;
+  isDesktopWidth: boolean;
 };
 
 const Header: React.FC = (): JSX.Element => {
   const [showSidebar, setShowSidebar] = useState<IState['showSidebar']>(false);
 
-  const { setShowLightBox } = useContext<IContext>(appContext);
+  const { setShowLightBox, isDesktopWidth } = useContext<IContext>(appContext);
 
   const handleSidebarViewClick = (): void => {
     setShowSidebar((prev) => !prev);
     setShowLightBox((prev) => !prev);
   };
+
+  useEffect((): void => {
+    if (isDesktopWidth && setShowSidebar) {
+      setShowSidebar(false);
+      setShowLightBox(false);
+    }
+  }, [isDesktopWidth]);
 
   const renderNavListItems = (): JSX.Element => {
     const navItems = ['Collections', 'Men', 'Women', 'About', 'Contact'];
@@ -39,7 +48,11 @@ const Header: React.FC = (): JSX.Element => {
 
   return (
     <header>
-      <NavBar showSideBarFn={handleSidebarViewClick} />
+      <NavBar
+        showSideBarFn={handleSidebarViewClick}
+        renderNavListItems={renderNavListItems}
+        isDesktopWidth={isDesktopWidth}
+      />
       <AnimatePresence>
         {showSidebar && (
           <NavSidebar
