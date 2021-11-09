@@ -1,0 +1,25 @@
+.navSidebar {
+  width: 65%;
+  height: 100%;
+  padding: 2.5rem;
+  background-color: white;
+  position: absolute;
+  top: 0;
+  z-index: 3;
+}
+
+.navSidebar button {
+  background-color: white;
+  margin-bottom: 5.5rem;
+}
+
+.navSidebar ul {
+  padding: 0rem;
+  list-style: none;
+  font-weight: 700;
+  font-size: 1.8rem;
+}
+
+.navSidebar ul li {
+  margin-bottom: 2rem;
+}

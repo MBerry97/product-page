@@ -1,0 +1,24 @@
+.navBar {
+  height: 100%;
+  display: flex;
+  padding: 0rem 2.4rem;
+  justify-content: space-between;
+
+  > div {
+    display: flex;
+    align-items: center;
+
+    img:first-of-type {
+      margin-right: 1.6rem;
+    }
+    button {
+      background-color: white;
+    }
+  }
+
+  //avatar
+  div:last-of-type img:last-of-type {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+}
