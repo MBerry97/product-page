@@ -25,11 +25,28 @@ const Header: React.FC = (): JSX.Element => {
     setShowSidebar((prev) => !prev);
     setShowLightBox((prev) => !prev);
   };
+
+  const renderNavListItems = (): JSX.Element => {
+    const navItems = ['Collections', 'Men', 'Women', 'About', 'Contact'];
+    return (
+      <ul>
+        {navItems.map((item): JSX.Element => {
+          return <li key={item}>{item}</li>;
+        })}
+      </ul>
+    );
+  };
+
   return (
     <header>
       <NavBar showSideBarFn={handleSidebarViewClick} />
       <AnimatePresence>
-        {showSidebar && <NavSidebar showSideBarFn={handleSidebarViewClick} />}
+        {showSidebar && (
+          <NavSidebar
+            showSideBarFn={handleSidebarViewClick}
+            renderNavListItems={renderNavListItems}
+          />
+        )}
       </AnimatePresence>
     </header>
   );

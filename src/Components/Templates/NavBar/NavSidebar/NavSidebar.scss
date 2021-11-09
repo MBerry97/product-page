@@ -1,9 +1,27 @@
+@import '../../../../Styles/styles.scss';
+
 .navSidebar {
   width: 65%;
   height: 100%;
-  border: 1px solid blue;
-  position: absolute;
+  padding: 2.5rem;
   background-color: white;
+  position: absolute;
   top: 0;
   z-index: 3;
+
+  button {
+    background-color: white;
+    margin-bottom: 5.5rem;
+  }
+
+  ul {
+    padding: 0rem;
+    list-style: none;
+    font-weight: $fontBold;
+    font-size: 1.8rem;
+
+    li {
+      margin-bottom: 2rem;
+    }
+  }
 }
