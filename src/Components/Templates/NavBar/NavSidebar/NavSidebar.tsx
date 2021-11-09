@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import './NavSidebar.css';
 
 import type { IState as Props } from '../../../../Pages/Homepage/Header/Header';
@@ -9,11 +10,17 @@ type IProps = {
 
 const NavSidebar: React.FC<IProps> = ({ showFn }): JSX.Element => {
   return (
-    <div className="navSidebar">
+    <motion.div
+      className="navSidebar"
+      initial={{ x: '-100%' }}
+      animate={{ x: 0 }}
+      transition={{ duration: 0.5 }}
+      exit={{ x: '-100%' }}
+    >
       <button type="button" onClick={() => showFn(false)}>
         x
       </button>
-    </div>
+    </motion.div>
   );
 };
 
