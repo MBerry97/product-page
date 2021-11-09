@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ProductImages = () => {
+const ProductImages: React.FC = (): JSX.Element => {
   return <div>product images</div>;
 };
 
