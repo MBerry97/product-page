@@ -1,0 +1,100 @@
+@import '../../../../Styles/styles.scss';
+
+.productInfo-container {
+  border: 1px solid blue;
+  height: 100%;
+  padding: 2.4rem;
+
+  h1 {
+    font-weight: $fontBold;
+    font-size: 1.2rem;
+    letter-spacing: 0.185rem;
+    color: $orange;
+  }
+
+  h2 {
+    font-weight: $fontBold;
+    font-size: 2.8rem;
+    margin: 1.5rem 0rem;
+  }
+
+  p {
+    font-weight: $fontNormal;
+    font-size: 1.5rem;
+    color: $darkGrayBlue;
+    letter-spacing: 0.045rem;
+  }
+}
+
+.productInfo-price-container {
+  display: flex;
+
+  align-items: center;
+  // flex-direction: row;
+  justify-content: space-between;
+  margin: 2.8rem 0rem;
+
+  > div {
+    display: flex;
+    align-items: center;
+
+    span:nth-child(1) {
+      font-size: 2.8rem;
+      font-weight: $fontBold;
+      margin-right: 1.6rem;
+    }
+
+    span:nth-child(2) {
+      font-weight: $fontBold;
+      font-size: 1.6rem;
+      background-color: $paleOrange;
+      color: $orange;
+      width: 5.1rem;
+      height: 2.7rem;
+      border-radius: 1rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  > span {
+    font-weight: $fontBold;
+    font-size: 1.6rem;
+    color: $grayBlue;
+    text-decoration: line-through;
+  }
+}
+
+.productInfo-button-container {
+  display: flex;
+  flex-direction: column;
+}
+.productInfo-quantityBtn-containter {
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 5.6rem;
+  background-color: $lightGrayBlue;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  margin-bottom: 1.6rem;
+  font-weight: $fontBold;
+  font-size: 1.6rem;
+
+  button {
+    width: 20%;
+    height: 100%;
+    background-color: $lightGrayBlue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    #plus-btn {
+      width: 1.4rem;
+      height: 1.4rem;
+    }
+  }
+}

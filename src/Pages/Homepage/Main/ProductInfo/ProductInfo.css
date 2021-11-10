@@ -1,0 +1,96 @@
+.productInfo-container {
+  border: 1px solid blue;
+  height: 100%;
+  padding: 2.4rem;
+}
+
+.productInfo-container h1 {
+  font-weight: 700;
+  font-size: 1.2rem;
+  letter-spacing: 0.185rem;
+  color: #ff7d1a;
+}
+
+.productInfo-container h2 {
+  font-weight: 700;
+  font-size: 2.8rem;
+  margin: 1.5rem 0rem;
+}
+
+.productInfo-container p {
+  font-weight: 400;
+  font-size: 1.5rem;
+  color: #68707d;
+  letter-spacing: 0.045rem;
+}
+
+.productInfo-price-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 2.8rem 0rem;
+}
+
+.productInfo-price-container > div {
+  display: flex;
+  align-items: center;
+}
+
+.productInfo-price-container > div span:nth-child(1) {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-right: 1.6rem;
+}
+
+.productInfo-price-container > div span:nth-child(2) {
+  font-weight: 700;
+  font-size: 1.6rem;
+  background-color: #ffede0;
+  color: #ff7d1a;
+  width: 5.1rem;
+  height: 2.7rem;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.productInfo-price-container > span {
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: #b6bcc8;
+  text-decoration: line-through;
+}
+
+.productInfo-button-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.productInfo-quantityBtn-containter {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 5.6rem;
+  background-color: #f7f8fd;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  margin-bottom: 1.6rem;
+  font-weight: 700;
+  font-size: 1.6rem;
+}
+
+.productInfo-quantityBtn-containter button {
+  width: 20%;
+  height: 100%;
+  background-color: #f7f8fd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.productInfo-quantityBtn-containter button #plus-btn {
+  width: 1.4rem;
+  height: 1.4rem;
+}
