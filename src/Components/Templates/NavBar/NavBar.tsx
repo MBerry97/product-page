@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from '../../../Assets/images/logo.svg';
 import burgerMenu from '../../../Assets/images/icon-menu.svg';
 import cart from '../../../Assets/images/icon-cart.svg';
 import avatar from '../../../Assets/images/image-avatar.png';
 import './NavBar.css';
 import { HeaderContext } from '../../../types/header.type';
+import CartModal from '../CartModal/CartModal';
 
 type IProps = {
   showSideBarFn: VoidFunction;
@@ -17,6 +18,7 @@ const NavBar: React.FC<IProps> = ({
   renderNavListItems,
   isDesktopWidth,
 }): JSX.Element => {
+  const [showCart, setShowCart] = useState(false);
   return (
     <div className="navBar">
       <div>
@@ -30,7 +32,11 @@ const NavBar: React.FC<IProps> = ({
         {isDesktopWidth && renderNavListItems()}
       </div>
       <div>
-        <img src={cart} alt="cart" />
+        {showCart && <CartModal />}
+        <button type="button" onClick={() => setShowCart((prev) => !prev)}>
+          <img src={cart} alt="cart" />
+        </button>
+
         <img src={avatar} alt="avatar" />
       </div>
     </div>

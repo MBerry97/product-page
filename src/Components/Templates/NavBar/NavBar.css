@@ -3,6 +3,7 @@
   display: flex;
   padding: 0rem 2.4rem;
   justify-content: space-between;
+  position: relative;
 }
 
 .navBar > div {
@@ -12,6 +13,7 @@
 
 .navBar > div img:first-of-type {
   margin-right: 1.6rem;
+  position: relative;
 }
 
 .navBar > div button {
@@ -41,11 +43,11 @@
     border-bottom: 1px solid #f7f8fd;
     padding: 0rem;
   }
-  .navBar div:last-of-type img:last-of-type {
+  .navBar div:last-of-type > img:last-of-type {
     width: 5rem;
     height: 5rem;
   }
-  .navBar > div img:first-of-type {
+  .navBar > div button img:first-of-type {
     margin-right: 4.6rem;
   }
 }
