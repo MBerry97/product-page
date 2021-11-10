@@ -3,19 +3,27 @@ import React, { useContext } from 'react';
 import './CartModal.css';
 import productThumbnail from '../../../Assets/images/image-product-1-thumbnail.jpg';
 import { appContext } from '../../../Contexts/appContext';
-import { CartModalContext } from '../../../types/header.type';
+import { ProductInfoContext } from '../../../types/main.type';
 import Button from '../../Shared/Button/Button';
 import Wrapper from '../../Containers/Wrapper/Wrapper';
 import deleteIcon from '../../../Assets/images/icon-delete.svg';
 
 const CartModal = (): JSX.Element => {
-  const { product } = useContext<CartModalContext>(appContext);
+  const { product, setProduct } = useContext<ProductInfoContext>(appContext);
   const { price, quantity } = product;
+
   const getPrice = (): number => {
     const priceAsNum = parseInt(price.slice(1, price.length));
     return priceAsNum * quantity;
   };
 
+  const handleDeleteClick = (): void => {
+    setProduct((prev) => {
+      const prevCopy = { ...prev };
+      prevCopy.quantity = 0;
+      return prevCopy;
+    });
+  };
   return (
     <section className="cartModal">
       <h1>Cart</h1>
@@ -36,7 +44,7 @@ const CartModal = (): JSX.Element => {
                   {price} x {quantity} <i>{`$${getPrice()}.00`}</i>
                 </span>
               </div>
-              <button type="button">
+              <button type="button" onClick={() => handleDeleteClick()}>
                 <img src={deleteIcon} alt="delete" id="cartModal-deleteImg" />
               </button>
             </div>
