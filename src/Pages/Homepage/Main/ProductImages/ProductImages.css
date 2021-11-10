@@ -40,3 +40,7 @@
   position: relative;
   max-width: 50rem;
 }
+
+.productImage-carousel img {
+  position: absolute;
+}

@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { useContext } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import './ProductImages.css';
 import { appContext } from '../../../../Contexts/appContext';
 import { AppState } from '../../../../types/app.type';
@@ -20,13 +20,16 @@ const ProductImages: React.FC = (): JSX.Element => {
   return (
     <div className="productImages-container">
       <div className="productImage-carousel">
-        <motion.img
-          src={images[imageIndex]}
-          alt="product"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          key={imageIndex}
-        />
+        <AnimatePresence>
+          <motion.img
+            src={images[imageIndex]}
+            alt="product"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            key={imageIndex}
+            exit={{ opacity: 0 }}
+          />
+        </AnimatePresence>
         <button
           type="button"
           onClick={() =>
