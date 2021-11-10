@@ -1,9 +1,9 @@
-import { ProductInfoContext } from '../types/main.type';
+import { ProductInfoState } from '../types/main.type';
 
 interface UpdateProductQuantity {
   (
     action: string,
-    stateFn: ProductInfoContext['setProduct'],
+    stateFn: React.Dispatch<React.SetStateAction<ProductInfoState['quantity']>>,
     currentQuan: number
   ): void;
 }
@@ -13,22 +13,14 @@ const updateProductQuantity: UpdateProductQuantity = (
   currentQuan
 ): void => {
   if (action === '+') {
-    stateFn((prev) => {
-      const prevCopy = { ...prev };
-      prevCopy.quantity += 1;
-      return prevCopy;
-    });
+    stateFn((prev) => prev + 1);
     return;
   }
   if (currentQuan === 0) {
     return;
   }
 
-  stateFn((prev) => {
-    const prevCopy = { ...prev };
-    prevCopy.quantity -= 1;
-    return prevCopy;
-  });
+  stateFn((prev) => prev - 1);
 };
 
 export default updateProductQuantity;

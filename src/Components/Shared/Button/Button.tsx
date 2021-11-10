@@ -7,11 +7,22 @@ type IProps = {
   type: string;
   img?: JSX.Element;
   effect?: string;
+  onClickFn?: () => void;
 };
 
-const Button: React.FC<IProps> = ({ text, type, img, effect }): JSX.Element => {
+const Button: React.FC<IProps> = ({
+  text,
+  type,
+  img,
+  effect,
+  onClickFn,
+}): JSX.Element => {
   return (
-    <button type="button" className={`button-${type}  button-${effect}`}>
+    <button
+      type="button"
+      className={`button-${type}  button-${effect}`}
+      onClick={() => onClickFn?.()}
+    >
       {img && img}
       {text}
     </button>

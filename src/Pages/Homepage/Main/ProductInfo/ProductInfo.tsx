@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import './ProductInfo.css';
 import { appContext } from '../../../../Contexts/appContext';
 import plusIcon from '../../../../Assets/images/icon-plus.svg';
@@ -6,10 +6,23 @@ import minusIcon from '../../../../Assets/images/icon-minus.svg';
 import Button from '../../../../Components/Shared/Button/Button';
 import cartImg from '../../../../Assets/images/icon-cart-white.svg';
 import updateProductQuantity from '../../../../Helpers/updateProductQuantity';
-import type { ProductInfoContext } from '../../../../types/main.type';
+import type {
+  ProductInfoContext,
+  ProductInfoState,
+} from '../../../../types/main.type';
 
 const ProductInfo = (): JSX.Element => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { product, setProduct } = useContext<ProductInfoContext>(appContext);
+  const [quantity, setQuantity] = useState<ProductInfoState['quantity']>(0);
+
+  const handleAddToCartBtnClick = (): void => {
+    setProduct((prev) => {
+      const prevCopy = { ...prev };
+      prevCopy.quantity = quantity;
+      return prevCopy;
+    });
+  };
 
   return (
     <section className="productInfo-container">
@@ -32,19 +45,15 @@ const ProductInfo = (): JSX.Element => {
         <div className="productInfo-quantityBtn-containter">
           <button
             type="button"
-            onClick={() =>
-              updateProductQuantity('-', setProduct, product.quantity)
-            }
+            onClick={() => updateProductQuantity('-', setQuantity, quantity)}
           >
             <img src={minusIcon} alt="plus" />
           </button>
-          <span>{product.quantity}</span>
+          <span>{quantity}</span>
 
           <button
             type="button"
-            onClick={() =>
-              updateProductQuantity('+', setProduct, product.quantity)
-            }
+            onClick={() => updateProductQuantity('+', setQuantity, quantity)}
           >
             <img src={plusIcon} alt="plus" id="plus-btn" />
           </button>
@@ -54,6 +63,7 @@ const ProductInfo = (): JSX.Element => {
           type="primary"
           img={<img src={cartImg} alt="cart" />}
           effect="boxShadow"
+          onClickFn={() => handleAddToCartBtnClick()}
         />
       </div>
     </section>
