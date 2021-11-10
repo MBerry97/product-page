@@ -1,5 +1,6 @@
+@import '../../../../Styles/styles.scss';
+
 .productImages-container {
-  border: 1px solid red;
   display: flex;
   justify-content: center;
   height: 100%;
@@ -13,12 +14,22 @@
     position: absolute;
     width: 4rem;
     height: 4rem;
+    top: 45%;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $lightGrayBlue;
+    img {
+      height: 1.5rem;
+      width: 1.2rem;
+    }
+  }
+  button:first-of-type {
+    left: 1.2rem;
   }
   button:last-of-type {
-    position: absolute;
-    width: 4rem;
-    height: 4rem;
-    right: 0;
+    right: 1.2rem;
   }
 }
 

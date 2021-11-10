@@ -6,6 +6,8 @@ import { appContext } from '../../../../Contexts/appContext';
 import { AppState } from '../../../../types/app.type';
 import images from '../../../../images';
 import { updateImageIndexCarousel } from '../../../../Helpers/updateImageIndex';
+import nextArrow from '../../../../Assets/images/icon-next.svg';
+import previousArrow from '../../../../Assets/images/icon-previous.svg';
 
 type IContext = {
   imageIndex: AppState['imageIndex'];
@@ -25,6 +27,14 @@ const ProductImages: React.FC = (): JSX.Element => {
           animate={{ opacity: 1 }}
           key={imageIndex}
         />
+        <button
+          type="button"
+          onClick={() =>
+            updateImageIndexCarousel('-', imageIndex, setImageIndex)
+          }
+        >
+          <img src={previousArrow} alt="arrow" />
+        </button>
 
         <button
           type="button"
@@ -32,15 +42,7 @@ const ProductImages: React.FC = (): JSX.Element => {
             updateImageIndexCarousel('+', imageIndex, setImageIndex)
           }
         >
-          +
-        </button>
-        <button
-          type="button"
-          onClick={() =>
-            updateImageIndexCarousel('+', imageIndex, setImageIndex)
-          }
-        >
-          -
+          <img src={nextArrow} alt="arrow" />
         </button>
       </div>
     </div>
