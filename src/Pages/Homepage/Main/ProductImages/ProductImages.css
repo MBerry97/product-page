@@ -44,3 +44,7 @@
 .productImage-carousel img {
   position: absolute;
 }
+
+.productImage-carousel button:active {
+  filter: brightness(87%);
+}

@@ -1,5 +1,6 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable radix */
-import React, { useContext } from 'react';
+import React, { useContext, useRef } from 'react';
 import { motion } from 'framer-motion';
 import './CartModal.css';
 import productThumbnail from '../../../Assets/images/image-product-1-thumbnail.jpg';
@@ -8,11 +9,13 @@ import { ProductInfoContext } from '../../../types/main.type';
 import Button from '../../Shared/Button/Button';
 import Wrapper from '../../Containers/Wrapper/Wrapper';
 import deleteIcon from '../../../Assets/images/icon-delete.svg';
+import useClickOutside from '../../../Hooks/useClickOutside';
 
 const CartModal = (): JSX.Element => {
   const { product, setProduct } = useContext<ProductInfoContext>(appContext);
   const { price, quantity } = product;
 
+  // const modalRef = useRef<HTMLDivElement>();
   const getPrice = (): number => {
     const priceAsNum = parseInt(price.slice(1, price.length));
     return priceAsNum * quantity;
@@ -25,9 +28,11 @@ const CartModal = (): JSX.Element => {
       return prevCopy;
     });
   };
+
   return (
     <motion.section
       className="cartModal"
+      // ref={modalRef}
       initial={{
         opacity: 0,
         transform: 'translate3d(0px, -24.5px, 0px)',

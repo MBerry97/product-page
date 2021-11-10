@@ -42,4 +42,8 @@
   img {
     position: absolute;
   }
+
+  button:active {
+    filter: brightness(87%);
+  }
 }
