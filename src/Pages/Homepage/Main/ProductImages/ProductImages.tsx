@@ -3,15 +3,15 @@ import React, { useContext } from 'react';
 import { motion } from 'framer-motion';
 import './ProductImages.css';
 import { appContext } from '../../../../Contexts/appContext';
-import type { IState as context } from '../../../../App';
+import { AppState } from '../../../../types/app.type';
 import image1 from '../../../../Assets/images/image-product-1.jpg';
 import image2 from '../../../../Assets/images/image-product-2.jpg';
 import image3 from '../../../../Assets/images/image-product-3.jpg';
 import image4 from '../../../../Assets/images/image-product-4.jpg';
 
 type IContext = {
-  imageIndex: context['imageIndex'];
-  setImageIndex: React.Dispatch<React.SetStateAction<context['imageIndex']>>;
+  imageIndex: AppState['imageIndex'];
+  setImageIndex: React.Dispatch<React.SetStateAction<AppState['imageIndex']>>;
 };
 
 const ProductImages: React.FC = (): JSX.Element => {

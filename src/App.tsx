@@ -5,17 +5,13 @@ import Wrapper from './Components/Containers/Wrapper/Wrapper';
 import HomePage from './Pages/Homepage/HomePage';
 import { Provider } from './Contexts/appContext';
 import useInnerWidth from './Hooks/useInnerWidth';
-
-export type IState = {
-  showLightBox: boolean;
-  imageIndex: number;
-};
+import { AppState } from './types/app.type';
 
 const App: React.FC = (): JSX.Element => {
   const [showLightBox, setShowLightBox] =
-    useState<IState['showLightBox']>(false);
+    useState<AppState['showLightBox']>(false);
 
-  const [imageIndex, setImageIndex] = useState<IState['imageIndex']>(0);
+  const [imageIndex, setImageIndex] = useState<AppState['imageIndex']>(0);
 
   const screenWidth = useInnerWidth();
 

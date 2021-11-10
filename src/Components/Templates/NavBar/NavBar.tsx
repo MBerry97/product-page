@@ -4,11 +4,12 @@ import burgerMenu from '../../../Assets/images/icon-menu.svg';
 import cart from '../../../Assets/images/icon-cart.svg';
 import avatar from '../../../Assets/images/image-avatar.png';
 import './NavBar.css';
+import { HeaderContext } from '../../../Pages/Homepage/Header/Header.type';
 
 type IProps = {
   showSideBarFn: VoidFunction;
   renderNavListItems: () => JSX.Element;
-  isDesktopWidth: boolean;
+  isDesktopWidth: HeaderContext['isDesktopWidth'];
 };
 
 const NavBar: React.FC<IProps> = ({

@@ -4,24 +4,15 @@ import { AnimatePresence } from 'framer-motion';
 import NavBar from '../../../Components/Templates/NavBar/NavBar';
 
 import { appContext } from '../../../Contexts/appContext';
-import type { IState as Context } from '../../../App';
 import NavSidebar from '../../../Components/Templates/NavBar/NavSidebar/NavSidebar';
-
-export type IState = {
-  showSidebar: boolean;
-};
-
-type IContext = {
-  setShowLightBox: React.Dispatch<
-    React.SetStateAction<Context['showLightBox']>
-  >;
-  isDesktopWidth: boolean;
-};
+import { HeaderState, HeaderContext } from './Header.type';
 
 const Header: React.FC = (): JSX.Element => {
-  const [showSidebar, setShowSidebar] = useState<IState['showSidebar']>(false);
+  const [showSidebar, setShowSidebar] =
+    useState<HeaderState['showSidebar']>(false);
 
-  const { setShowLightBox, isDesktopWidth } = useContext<IContext>(appContext);
+  const { setShowLightBox, isDesktopWidth } =
+    useContext<HeaderContext>(appContext);
 
   const handleSidebarViewClick = (): void => {
     setShowSidebar((prev) => !prev);
