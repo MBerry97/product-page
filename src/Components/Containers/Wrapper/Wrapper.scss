@@ -1,11 +1,18 @@
 .wrapper {
   width: 100%;
   min-height: 100%;
-  border: 1px solid red;
 }
 
 .page-wrapper {
   padding: 0rem;
+}
+
+.main-wrapper {
+  height: 30rem;
+  width: 100%;
+  max-width: 50rem;
+  border: 1px solid red;
+  margin: 0 auto;
 }
 
 @media only screen and (min-width: 1440px) {

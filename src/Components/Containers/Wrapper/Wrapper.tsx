@@ -2,7 +2,7 @@ import React from 'react';
 import './Wrapper.css';
 
 type IProps = {
-  children: JSX.Element;
+  children: JSX.Element | JSX.Element[];
   additionalClass: string;
 };
 
