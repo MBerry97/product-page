@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { AnimatePresence } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import logo from '../../../Assets/images/logo.svg';
 import burgerMenu from '../../../Assets/images/icon-menu.svg';
 import cart from '../../../Assets/images/icon-cart.svg';
@@ -38,7 +38,17 @@ const NavBar: React.FC<IProps> = ({
         <AnimatePresence>{showCart && <CartModal />}</AnimatePresence>
         <button type="button" onClick={() => setShowCart((prev) => !prev)}>
           <img src={cart} alt="cart" />
-          {product.quantity > 0 && <i>{product.quantity}</i>}
+          <AnimatePresence>
+            {product.quantity > 0 && (
+              <motion.i
+                initial={{ y: -100 }}
+                animate={{ y: 0 }}
+                exit={{ y: -100 }}
+              >
+                {product.quantity}
+              </motion.i>
+            )}
+          </AnimatePresence>
         </button>
 
         <img src={avatar} alt="avatar" id="navBar-avatarImg" />

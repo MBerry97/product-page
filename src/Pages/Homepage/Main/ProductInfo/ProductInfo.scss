@@ -72,6 +72,10 @@
   > button {
     margin-bottom: 2.4rem;
   }
+
+  button:active {
+    filter: brightness(87%);
+  }
 }
 .productInfo-quantityBtn-containter {
   width: 100%;
@@ -87,6 +91,10 @@
   font-weight: $fontBold;
   font-size: 1.6rem;
 
+  button:active {
+    filter: brightness(87%);
+  }
+
   button {
     width: 20%;
     height: 100%;
@@ -98,6 +106,17 @@
     #plus-btn {
       width: 1.4rem;
       height: 1.4rem;
+    }
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .productInfo-quantityBtn-containter {
+    button:hover {
+      filter: brightness(95%);
+    }
+    button:active {
+      filter: brightness(87%);
     }
   }
 }

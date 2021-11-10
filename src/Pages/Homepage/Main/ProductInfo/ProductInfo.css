@@ -70,6 +70,10 @@
   margin-bottom: 2.4rem;
 }
 
+.productInfo-button-container button:active {
+  filter: brightness(87%);
+}
+
 .productInfo-quantityBtn-containter {
   width: 100%;
   display: flex;
@@ -84,6 +88,10 @@
   font-size: 1.6rem;
 }
 
+.productInfo-quantityBtn-containter button:active {
+  filter: brightness(87%);
+}
+
 .productInfo-quantityBtn-containter button {
   width: 20%;
   height: 100%;
@@ -96,4 +104,13 @@
 .productInfo-quantityBtn-containter button #plus-btn {
   width: 1.4rem;
   height: 1.4rem;
+}
+
+@media only screen and (min-width: 1440px) {
+  .productInfo-quantityBtn-containter button:hover {
+    filter: brightness(95%);
+  }
+  .productInfo-quantityBtn-containter button:active {
+    filter: brightness(87%);
+  }
 }

@@ -10,6 +10,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: transform 0.3s;
 
   img {
     margin-right: 1.6rem;
@@ -18,4 +19,11 @@
 
 .button-boxShadow {
   box-shadow: 0px 22px 24px -18px $orange;
+}
+
+@media only screen and (min-width: 1440px) {
+  .button-primary:hover {
+    filter: brightness(95%);
+    transform: scale(102%);
+  }
 }
