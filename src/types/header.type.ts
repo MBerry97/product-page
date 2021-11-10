@@ -10,3 +10,7 @@ export type HeaderContext = {
   >;
   isDesktopWidth: boolean;
 };
+
+export type CartModalContext = {
+  product: AppState['product'];
+};

@@ -40,7 +40,7 @@
 
 @media only screen and (min-width: 1440px) {
   .navBar {
-    border-bottom: 1px solid #f7f8fd;
+    border-bottom: 1px solid #e3e8f2;
     padding: 0rem;
   }
   .navBar div:last-of-type > img:last-of-type {
