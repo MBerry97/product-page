@@ -5,7 +5,7 @@ import NavBar from '../../../Components/Templates/NavBar/NavBar';
 
 import { appContext } from '../../../Contexts/appContext';
 import NavSidebar from '../../../Components/Templates/NavBar/NavSidebar/NavSidebar';
-import { HeaderState, HeaderContext } from './Header.type';
+import { HeaderState, HeaderContext } from '../../../types/header.type';
 
 const Header: React.FC = (): JSX.Element => {
   const [showSidebar, setShowSidebar] =

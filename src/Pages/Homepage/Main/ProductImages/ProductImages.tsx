@@ -3,19 +3,15 @@ import React, { useContext } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import './ProductImages.css';
 import { appContext } from '../../../../Contexts/appContext';
-import { AppState } from '../../../../types/app.type';
+import type { ProductImagesContext } from '../../../../types/main.type';
 import images from '../../../../images';
 import { updateImageIndexCarousel } from '../../../../Helpers/updateImageIndex';
 import nextArrow from '../../../../Assets/images/icon-next.svg';
 import previousArrow from '../../../../Assets/images/icon-previous.svg';
 
-type IContext = {
-  imageIndex: AppState['imageIndex'];
-  setImageIndex: React.Dispatch<React.SetStateAction<AppState['imageIndex']>>;
-};
-
 const ProductImages: React.FC = (): JSX.Element => {
-  const { imageIndex, setImageIndex } = useContext<IContext>(appContext);
+  const { imageIndex, setImageIndex } =
+    useContext<ProductImagesContext>(appContext);
 
   return (
     <div className="productImages-container">

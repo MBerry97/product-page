@@ -1,4 +1,4 @@
-import { AppState } from '../../../types/app.type';
+import { AppState } from './app.type';
 
 export type HeaderState = {
   showSidebar: boolean;
