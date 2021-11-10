@@ -1,5 +1,6 @@
 /* eslint-disable radix */
 import React, { useContext } from 'react';
+import { motion } from 'framer-motion';
 import './CartModal.css';
 import productThumbnail from '../../../Assets/images/image-product-1-thumbnail.jpg';
 import { appContext } from '../../../Contexts/appContext';
@@ -25,7 +26,39 @@ const CartModal = (): JSX.Element => {
     });
   };
   return (
-    <section className="cartModal">
+    <motion.section
+      className="cartModal"
+      initial={{
+        opacity: 0,
+        transform: 'translate3d(0px, -24.5px, 0px)',
+        transformStyle: 'flat',
+        transformOrigin: '50% 50% 0px',
+
+        height: 170,
+      }}
+      animate={{
+        opacity: 1,
+        transformStyle: 'flat',
+        transform: 'translate3d(0px, 0px, 0px)',
+
+        height: 256,
+        transformOrigin: '50% 50% 0px',
+      }}
+      transition={{
+        duration: 10,
+        type: 'spring',
+        delay: 0,
+        stiffness: 500,
+        damping: 28,
+        mass: 1,
+      }}
+      exit={{
+        opacity: 0,
+
+        height: 170,
+        transform: 'translate3d(0px, -24.5px, 0px)',
+      }}
+    >
       <h1>Cart</h1>
 
       {quantity === 0 && <span>Your cart is empty</span>}
@@ -52,7 +85,7 @@ const CartModal = (): JSX.Element => {
           </Wrapper>
         </>
       )}
-    </section>
+    </motion.section>
   );
 };
 

@@ -66,6 +66,10 @@
   flex-direction: column;
 }
 
+.productInfo-button-container > button {
+  margin-bottom: 2.4rem;
+}
+
 .productInfo-quantityBtn-containter {
   width: 100%;
   display: flex;
