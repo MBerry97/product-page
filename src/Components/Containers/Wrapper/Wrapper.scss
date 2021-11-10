@@ -7,6 +7,14 @@
   padding: 0rem;
 }
 
+.main-wrapper {
+  height: 30rem;
+  width: 100%;
+  max-width: 50rem;
+  border: 1px solid red;
+  margin: 0 auto;
+}
+
 @media only screen and (min-width: 1440px) {
   .page-wrapper {
     padding: 0rem 16.5rem;
