@@ -33,6 +33,37 @@
   color: #68707d;
 }
 
+.cartModal > div > button {
+  width: 100%;
+}
+
+.cartModal-productInfo {
+  height: 5.2rem;
+  margin-bottom: 2.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cartModal-productInfo #cartModal-productImg {
+  height: 100%;
+  width: 5rem;
+  border-radius: 0.6rem;
+}
+
+.cartModal-productInfo > div {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 1.6rem;
+  color: #68707d;
+}
+
+.cartModal-productInfo > div i {
+  font-weight: 700;
+  color: black;
+}
+
 @media only screen and (min-width: 850px) {
   .cartModal {
     position: relative;

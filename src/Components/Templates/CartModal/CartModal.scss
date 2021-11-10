@@ -18,6 +18,7 @@
   display: flex;
   flex-direction: column;
 
+  //cart header
   h1 {
     margin: 0rem;
     padding: 2.4rem;
@@ -26,6 +27,7 @@
     font-size: 1.6rem;
   }
 
+  //cart is empty message
   > span {
     display: flex;
     // flex-direction: column;
@@ -35,6 +37,38 @@
     font-size: 1.6rem;
     font-weight: $fontBold;
     color: $darkGrayBlue;
+  }
+
+  //checkout button
+  > div > button {
+    width: 100%;
+  }
+}
+
+.cartModal-productInfo {
+  height: 5.2rem;
+  margin-bottom: 2.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  #cartModal-productImg {
+    height: 100%;
+    width: 5rem;
+    border-radius: 0.6rem;
+  }
+
+  > div {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 1.6rem;
+    color: $darkGrayBlue;
+
+    i {
+      font-weight: $fontBold;
+      color: black;
+    }
   }
 }
 

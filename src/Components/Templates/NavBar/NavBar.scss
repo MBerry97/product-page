@@ -12,17 +12,19 @@
     align-items: center;
 
     //cart
-    img:first-of-type {
-      margin-right: 1.6rem;
-      position: relative;
-    }
-    button {
+
+    > button {
       background-color: white;
+
+      img:first-of-type {
+        margin-right: 1.6rem;
+        position: relative;
+      }
     }
   }
 
   //avatar
-  div:last-of-type img:last-of-type {
+  #navBar-avatarImg {
     width: 2.4rem;
     height: 2.4rem;
   }
@@ -47,14 +49,14 @@
     padding: 0rem;
 
     //avatar
-    div:last-of-type > img:last-of-type {
+    #navBar-avatarImg {
       width: 5rem;
       height: 5rem;
     }
 
     > div {
       //cart
-      button img:first-of-type {
+      > button img:first-of-type {
         margin-right: 4.6rem;
       }
     }

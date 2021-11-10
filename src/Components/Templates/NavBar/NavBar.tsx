@@ -37,7 +37,7 @@ const NavBar: React.FC<IProps> = ({
           <img src={cart} alt="cart" />
         </button>
 
-        <img src={avatar} alt="avatar" />
+        <img src={avatar} alt="avatar" id="navBar-avatarImg" />
       </div>
     </div>
   );

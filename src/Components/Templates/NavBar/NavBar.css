@@ -11,16 +11,16 @@
   align-items: center;
 }
 
-.navBar > div img:first-of-type {
+.navBar > div > button {
+  background-color: white;
+}
+
+.navBar > div > button img:first-of-type {
   margin-right: 1.6rem;
   position: relative;
 }
 
-.navBar > div button {
-  background-color: white;
-}
-
-.navBar div:last-of-type img:last-of-type {
+.navBar #navBar-avatarImg {
   width: 2.4rem;
   height: 2.4rem;
 }
@@ -43,11 +43,11 @@
     border-bottom: 1px solid #e3e8f2;
     padding: 0rem;
   }
-  .navBar div:last-of-type > img:last-of-type {
+  .navBar #navBar-avatarImg {
     width: 5rem;
     height: 5rem;
   }
-  .navBar > div button img:first-of-type {
+  .navBar > div > button img:first-of-type {
     margin-right: 4.6rem;
   }
 }
