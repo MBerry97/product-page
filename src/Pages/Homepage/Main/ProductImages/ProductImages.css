@@ -1,5 +1,7 @@
 .productImages-container {
   border: 1px solid red;
+  display: flex;
+  justify-content: center;
 }
 
 .productImages-container img {
@@ -24,4 +26,5 @@
   width: 100%;
   height: 100%;
   position: relative;
+  max-width: 50rem;
 }
