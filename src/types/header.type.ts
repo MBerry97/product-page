@@ -1,4 +1,4 @@
-import { AppState } from '../../../types/app.type';
+import { AppState } from './app.type';
 
 export type HeaderState = {
   showSidebar: boolean;
@@ -9,4 +9,5 @@ export type HeaderContext = {
     React.SetStateAction<AppState['showLightBox']>
   >;
   isDesktopWidth: boolean;
+  product: AppState['product'];
 };

@@ -13,6 +13,11 @@ const App: React.FC = (): JSX.Element => {
 
   const [imageIndex, setImageIndex] = useState<AppState['imageIndex']>(0);
 
+  const [product, setProduct] = useState<AppState['product']>({
+    price: '$125.00',
+    quantity: 0,
+  });
+
   const screenWidth = useInnerWidth();
 
   const isDesktopWidth = screenWidth >= 1440;
@@ -26,6 +31,8 @@ const App: React.FC = (): JSX.Element => {
           isDesktopWidth,
           imageIndex,
           setImageIndex,
+          product,
+          setProduct,
         }}
       >
         <Wrapper additionalClass="page-wrapper">

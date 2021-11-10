@@ -5,21 +5,43 @@
   display: flex;
   padding: 0rem 2.4rem;
   justify-content: space-between;
+  position: relative;
 
   > div {
     display: flex;
     align-items: center;
 
-    img:first-of-type {
-      margin-right: 1.6rem;
-    }
-    button {
+    //cart
+
+    > button {
       background-color: white;
+      position: relative;
+      height: 4rem;
+
+      img:first-of-type {
+        margin-right: 1.6rem;
+        position: relative;
+      }
+      i {
+        position: absolute;
+        top: 3px;
+        right: 6px;
+        background-color: $orange;
+        width: 2.2rem;
+        height: 1.5rem;
+        border-radius: 1rem;
+        font-size: 1.2rem;
+        font-weight: $fontBold;
+        color: $white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
     }
   }
 
   //avatar
-  div:last-of-type img:last-of-type {
+  #navBar-avatarImg {
     width: 2.4rem;
     height: 2.4rem;
   }
@@ -40,18 +62,18 @@
 
 @media only screen and (min-width: 1440px) {
   .navBar {
-    border-bottom: 1px solid $lightGrayBlue;
+    border-bottom: 1px solid $borderBtm;
     padding: 0rem;
 
     //avatar
-    div:last-of-type img:last-of-type {
+    #navBar-avatarImg {
       width: 5rem;
       height: 5rem;
     }
 
     > div {
       //cart
-      img:first-of-type {
+      > button:first-of-type {
         margin-right: 4.6rem;
       }
     }
