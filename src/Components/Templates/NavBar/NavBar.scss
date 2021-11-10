@@ -15,10 +15,27 @@
 
     > button {
       background-color: white;
+      position: relative;
+      height: 4rem;
 
       img:first-of-type {
         margin-right: 1.6rem;
         position: relative;
+      }
+      i {
+        position: absolute;
+        top: 3px;
+        right: 6px;
+        background-color: $orange;
+        width: 2.2rem;
+        height: 1.5rem;
+        border-radius: 1rem;
+        font-size: 1.2rem;
+        font-weight: $fontBold;
+        color: $white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
     }
   }
@@ -56,7 +73,7 @@
 
     > div {
       //cart
-      > button img:first-of-type {
+      > button:first-of-type {
         margin-right: 4.6rem;
       }
     }

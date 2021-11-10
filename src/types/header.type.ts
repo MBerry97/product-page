@@ -9,8 +9,5 @@ export type HeaderContext = {
     React.SetStateAction<AppState['showLightBox']>
   >;
   isDesktopWidth: boolean;
+  product: AppState['product'];
 };
-
-// export type CartModalContext = {
-//   product: AppState['product'];
-// };

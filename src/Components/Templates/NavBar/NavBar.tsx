@@ -11,12 +11,14 @@ type IProps = {
   showSideBarFn: VoidFunction;
   renderNavListItems: () => JSX.Element;
   isDesktopWidth: HeaderContext['isDesktopWidth'];
+  product: HeaderContext['product'];
 };
 
 const NavBar: React.FC<IProps> = ({
   showSideBarFn,
   renderNavListItems,
   isDesktopWidth,
+  product,
 }): JSX.Element => {
   const [showCart, setShowCart] = useState(false);
   return (
@@ -35,6 +37,7 @@ const NavBar: React.FC<IProps> = ({
         {showCart && <CartModal />}
         <button type="button" onClick={() => setShowCart((prev) => !prev)}>
           <img src={cart} alt="cart" />
+          {product.quantity > 0 && <i>{product.quantity}</i>}
         </button>
 
         <img src={avatar} alt="avatar" id="navBar-avatarImg" />

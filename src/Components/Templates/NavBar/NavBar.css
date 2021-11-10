@@ -13,11 +13,29 @@
 
 .navBar > div > button {
   background-color: white;
+  position: relative;
+  height: 4rem;
 }
 
 .navBar > div > button img:first-of-type {
   margin-right: 1.6rem;
   position: relative;
+}
+
+.navBar > div > button i {
+  position: absolute;
+  top: 3px;
+  right: 6px;
+  background-color: #ff7d1a;
+  width: 2.2rem;
+  height: 1.5rem;
+  border-radius: 1rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .navBar #navBar-avatarImg {
@@ -47,7 +65,7 @@
     width: 5rem;
     height: 5rem;
   }
-  .navBar > div > button img:first-of-type {
+  .navBar > div > button:first-of-type {
     margin-right: 4.6rem;
   }
 }

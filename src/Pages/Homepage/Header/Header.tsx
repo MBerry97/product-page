@@ -11,7 +11,7 @@ const Header: React.FC = (): JSX.Element => {
   const [showSidebar, setShowSidebar] =
     useState<HeaderState['showSidebar']>(false);
 
-  const { setShowLightBox, isDesktopWidth } =
+  const { setShowLightBox, isDesktopWidth, product } =
     useContext<HeaderContext>(appContext);
 
   const handleSidebarViewClick = (): void => {
@@ -43,6 +43,7 @@ const Header: React.FC = (): JSX.Element => {
         showSideBarFn={handleSidebarViewClick}
         renderNavListItems={renderNavListItems}
         isDesktopWidth={isDesktopWidth}
+        product={product}
       />
       <AnimatePresence>
         {showSidebar && (
