@@ -77,9 +77,19 @@ const CartModal = (): JSX.Element => {
                   {price} x {quantity} <i>{`$${getPrice()}.00`}</i>
                 </span>
               </div>
-              <button type="button" onClick={() => handleDeleteClick()}>
+              <motion.button
+                type="button"
+                onClick={() => handleDeleteClick()}
+                whileHover={{
+                  rotate: ['0deg', '30deg', '-30deg'],
+                }}
+                transition={{
+                  yoyo: Infinity,
+                  duration: '0.8',
+                }}
+              >
                 <img src={deleteIcon} alt="delete" id="cartModal-deleteImg" />
-              </button>
+              </motion.button>
             </div>
             <Button text="Checkout" type="primary" />
           </Wrapper>
