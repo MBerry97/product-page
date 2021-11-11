@@ -13,4 +13,7 @@ export type ProductImagesContext = {
   imageIndex: AppState['imageIndex'];
   setImageIndex: React.Dispatch<React.SetStateAction<AppState['imageIndex']>>;
   isDesktopWidth: boolean;
+  setShowLightBox: React.Dispatch<
+    React.SetStateAction<AppState['showLightBox']>
+  >;
 };

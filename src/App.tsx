@@ -38,7 +38,12 @@ const App: React.FC = (): JSX.Element => {
         <Wrapper additionalClass="page-wrapper">
           <HomePage />
         </Wrapper>
-        {showLightBox && <LightBox />}
+        {showLightBox && (
+          <LightBox
+            isDesktopWidth={isDesktopWidth}
+            setShowLightBox={setShowLightBox}
+          />
+        )}
       </Provider>
     </div>
   );

@@ -15,7 +15,7 @@ import nextArrow from '../../../../Assets/images/icon-next.svg';
 import previousArrow from '../../../../Assets/images/icon-previous.svg';
 
 const ProductImages: React.FC = (): JSX.Element => {
-  const { imageIndex, setImageIndex, isDesktopWidth } =
+  const { imageIndex, setImageIndex, isDesktopWidth, setShowLightBox } =
     useContext<ProductImagesContext>(appContext);
 
   return (
@@ -29,6 +29,7 @@ const ProductImages: React.FC = (): JSX.Element => {
             animate={{ opacity: 1 }}
             key={imageIndex}
             exit={{ opacity: 0 }}
+            onClick={() => setShowLightBox(true)}
           />
         </AnimatePresence>
         {!isDesktopWidth && (

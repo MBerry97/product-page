@@ -42,6 +42,7 @@
 
 .productImage-carousel img {
   position: absolute;
+  cursor: pointer;
 }
 
 .productImage-carousel button:active {

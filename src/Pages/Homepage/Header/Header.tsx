@@ -20,7 +20,7 @@ const Header: React.FC = (): JSX.Element => {
   };
 
   useEffect((): void => {
-    if (isDesktopWidth && setShowSidebar) {
+    if (isDesktopWidth || !isDesktopWidth) {
       setShowSidebar(false);
       setShowLightBox(false);
     }
