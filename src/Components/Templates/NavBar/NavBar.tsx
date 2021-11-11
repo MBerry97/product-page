@@ -5,7 +5,7 @@ import burgerMenu from '../../../Assets/images/icon-menu.svg';
 import cart from '../../../Assets/images/icon-cart.svg';
 import avatar from '../../../Assets/images/image-avatar.png';
 import './NavBar.css';
-import { HeaderContext } from '../../../types/header.type';
+import { HeaderContext, NavBarState } from '../../../types/header.type';
 import CartModal from '../CartModal/CartModal';
 
 type IProps = {
@@ -21,7 +21,7 @@ const NavBar: React.FC<IProps> = ({
   isDesktopWidth,
   product,
 }): JSX.Element => {
-  const [showCart, setShowCart] = useState(false);
+  const [showCart, setShowCart] = useState<NavBarState['showCart']>(false);
   return (
     <div className="navBar">
       <div>
@@ -35,7 +35,11 @@ const NavBar: React.FC<IProps> = ({
         {isDesktopWidth && renderNavListItems()}
       </div>
       <div>
-        <AnimatePresence>{showCart && <CartModal />}</AnimatePresence>
+        <AnimatePresence>
+          {showCart && (
+            <CartModal showCart={showCart} setShowCart={setShowCart} />
+          )}
+        </AnimatePresence>
         <button type="button" onClick={() => setShowCart((prev) => !prev)}>
           <img src={cart} alt="cart" />
           <AnimatePresence>

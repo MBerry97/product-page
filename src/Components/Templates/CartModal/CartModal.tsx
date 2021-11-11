@@ -5,17 +5,29 @@ import { motion } from 'framer-motion';
 import './CartModal.css';
 import productThumbnail from '../../../Assets/images/image-product-1-thumbnail.jpg';
 import { appContext } from '../../../Contexts/appContext';
+import { NavBarState } from '../../../types/header.type';
 import { ProductInfoContext } from '../../../types/main.type';
 import Button from '../../Shared/Button/Button';
 import Wrapper from '../../Containers/Wrapper/Wrapper';
 import deleteIcon from '../../../Assets/images/icon-delete.svg';
 import useClickOutside from '../../../Hooks/useClickOutside';
 
-const CartModal = (): JSX.Element => {
+type IProps = {
+  showCart: boolean;
+  setShowCart: React.Dispatch<React.SetStateAction<NavBarState['showCart']>>;
+};
+
+const CartModal: React.FC<IProps> = ({
+  showCart,
+  setShowCart,
+}): JSX.Element => {
   const { product, setProduct } = useContext<ProductInfoContext>(appContext);
   const { price, quantity } = product;
 
   const modalRef = useRef<HTMLElement>(null);
+
+  useClickOutside(modalRef, setShowCart, showCart);
+
   const getPrice = (): number => {
     const priceAsNum = parseInt(price.slice(1, price.length));
     return priceAsNum * quantity;

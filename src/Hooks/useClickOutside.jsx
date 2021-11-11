@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 // eslint-disable-next-line no-unused-vars
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 
 const useClickOutside = (ref, callback, dependency) => {
   const handleClick = (e) => {

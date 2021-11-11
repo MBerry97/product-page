@@ -11,3 +11,7 @@ export type HeaderContext = {
   isDesktopWidth: boolean;
   product: AppState['product'];
 };
+
+export type NavBarState = {
+  showCart: boolean;
+};
