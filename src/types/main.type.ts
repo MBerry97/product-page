@@ -16,4 +16,5 @@ export type ProductImagesContext = {
   setShowLightBox: React.Dispatch<
     React.SetStateAction<AppState['showLightBox']>
   >;
+  showLightBox: AppState['showLightBox'];
 };

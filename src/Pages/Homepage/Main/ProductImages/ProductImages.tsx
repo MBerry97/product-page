@@ -1,3 +1,4 @@
+/* eslint-disable react/require-default-props */
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable @typescript-eslint/no-unused-vars */
@@ -14,9 +15,25 @@ import {
 import nextArrow from '../../../../Assets/images/icon-next.svg';
 import previousArrow from '../../../../Assets/images/icon-previous.svg';
 
-const ProductImages: React.FC = (): JSX.Element => {
+type IProps = {
+  carouselArrows: boolean;
+};
+
+const ProductImages: React.FC<IProps> = ({ carouselArrows }): JSX.Element => {
   const { imageIndex, setImageIndex, isDesktopWidth, setShowLightBox } =
     useContext<ProductImagesContext>(appContext);
+
+  const handleArrowDisplay = (): boolean => {
+    if (!isDesktopWidth) {
+      return true;
+    }
+
+    if (isDesktopWidth && carouselArrows) {
+      return true;
+    }
+
+    return false;
+  };
 
   return (
     <div className="productImages-container">
@@ -29,10 +46,10 @@ const ProductImages: React.FC = (): JSX.Element => {
             animate={{ opacity: 1 }}
             key={imageIndex}
             exit={{ opacity: 0 }}
-            onClick={() => setShowLightBox(true)}
+            onClick={() => setShowLightBox(!!isDesktopWidth)}
           />
         </AnimatePresence>
-        {!isDesktopWidth && (
+        {handleArrowDisplay() && (
           <button
             type="button"
             onClick={() =>
@@ -43,7 +60,7 @@ const ProductImages: React.FC = (): JSX.Element => {
           </button>
         )}
 
-        {!isDesktopWidth && (
+        {handleArrowDisplay() && (
           <button
             type="button"
             onClick={() =>

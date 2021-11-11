@@ -1,6 +1,8 @@
 import React from 'react';
+import ProductImages from '../../../Pages/Homepage/Main/ProductImages/ProductImages';
 import { AppState } from '../../../types/app.type';
 import './LightBox.css';
+import iconClose from '../../../Assets/images/icon-close.svg';
 
 type IProps = {
   isDesktopWidth: boolean;
@@ -16,9 +18,13 @@ const LightBox: React.FC<IProps> = ({
   return (
     <section className="lightBox">
       {isDesktopWidth && (
-        <button type="button" onClick={() => setShowLightBox(false)}>
-          x
-        </button>
+        <div className="lightBox-desktop-container">
+          <button type="button" onClick={() => setShowLightBox(false)}>
+            <img src={iconClose} alt="close" />
+          </button>
+
+          <ProductImages carouselArrows />
+        </div>
       )}
     </section>
   );

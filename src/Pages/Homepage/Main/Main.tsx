@@ -8,7 +8,7 @@ const Main: React.FC = (): JSX.Element => {
   return (
     <main className="main">
       <Wrapper additionalClass="main-wrapper">
-        <ProductImages />
+        <ProductImages carouselArrows={false} />
       </Wrapper>
       <Wrapper additionalClass="main-wrapper">
         <ProductInfo />
