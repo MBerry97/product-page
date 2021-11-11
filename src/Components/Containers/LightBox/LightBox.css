@@ -7,6 +7,7 @@
   top: 0;
   display: flex;
   align-items: center;
+  overflow: auto;
 }
 
 .lightBox-desktop-container {
@@ -19,7 +20,7 @@
   background-color: #f7f8fd;
   position: relative;
   left: 93%;
-  bottom: 3rem;
+  margin: 3rem 0rem;
   border-radius: 50%;
   width: 4rem;
   height: 4rem;
