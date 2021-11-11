@@ -15,7 +15,6 @@
 
   margin: 0 auto;
   min-height: 100%;
-  border: 1px solid red;
 }
 
 .main-wrapper:last-of-type {
@@ -36,8 +35,7 @@
   }
 
   .main-wrapper {
-    // position: relative;
-    // right: 10rem;
+    min-height: 56.5rem;
   }
 
   .main-wrapper:last-of-type {

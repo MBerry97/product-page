@@ -12,4 +12,5 @@ export type ProductInfoState = {
 export type ProductImagesContext = {
   imageIndex: AppState['imageIndex'];
   setImageIndex: React.Dispatch<React.SetStateAction<AppState['imageIndex']>>;
+  isDesktopWidth: boolean;
 };

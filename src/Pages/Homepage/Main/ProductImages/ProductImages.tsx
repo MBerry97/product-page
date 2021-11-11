@@ -4,13 +4,13 @@ import { motion, AnimatePresence } from 'framer-motion';
 import './ProductImages.css';
 import { appContext } from '../../../../Contexts/appContext';
 import type { ProductImagesContext } from '../../../../types/main.type';
-import images from '../../../../images';
+import { images, imageThumbs } from '../../../../images';
 import { updateImageIndexCarousel } from '../../../../Helpers/updateImageIndex';
 import nextArrow from '../../../../Assets/images/icon-next.svg';
 import previousArrow from '../../../../Assets/images/icon-previous.svg';
 
 const ProductImages: React.FC = (): JSX.Element => {
-  const { imageIndex, setImageIndex } =
+  const { imageIndex, setImageIndex, isDesktopWidth } =
     useContext<ProductImagesContext>(appContext);
 
   return (
@@ -44,6 +44,13 @@ const ProductImages: React.FC = (): JSX.Element => {
           <img src={nextArrow} alt="arrow" />
         </button>
       </div>
+      {isDesktopWidth && (
+        <div className="productImages-thumbnail-container">
+          {imageThumbs.map((img) => {
+            return <img src={img} alt="product thumbnail" />;
+          })}
+        </div>
+      )}
     </div>
   );
 };

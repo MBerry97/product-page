@@ -49,7 +49,34 @@
   }
 }
 
+.productImages-thumbnail-container {
+  height: 8.8rem;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2.4rem;
+
+  img {
+    width: 8.8rem;
+    border-radius: 1rem;
+  }
+
+  img:hover {
+    filter: brightness(120%);
+  }
+}
+
 @media only screen and (min-width: 1440px) {
   .productImages-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .productImage-carousel {
+    height: 44.5rem;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    min-height: 40rem;
+    margin-bottom: 2.4rem;
   }
 }

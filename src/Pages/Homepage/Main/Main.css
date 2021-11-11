@@ -9,5 +9,7 @@
     grid-template-columns: calc(50% - 6.25rem) calc(50% - 6.25rem);
     padding: 9rem 5rem 13.2rem 5rem;
     column-gap: 12.5rem;
+    min-height: 51.6rem;
+    max-height: 80rem;
   }
 }
