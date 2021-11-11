@@ -6,6 +6,7 @@
 .page-wrapper {
   padding: 0rem;
   min-height: 100%;
+  overflow: auto;
 }
 
 .main-wrapper {
@@ -15,7 +16,6 @@
 
   margin: 0 auto;
   min-height: 100%;
-  border: 1px solid red;
 }
 
 .main-wrapper:last-of-type {
@@ -30,6 +30,18 @@
 
 @media only screen and (min-width: 1440px) {
   .page-wrapper {
+    display: flex;
+    justify-content: center;
     padding: 0rem 16.5rem;
+  }
+
+  .main-wrapper {
+    min-height: 56.5rem;
+  }
+
+  .main-wrapper:last-of-type {
+    height: fit-content;
+    display: flex;
+    align-items: center;
   }
 }

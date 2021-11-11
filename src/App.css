@@ -3,6 +3,7 @@
   min-height: 100vh;
   position: relative;
   min-width: 37.5rem;
+  /* overflow: auto; */
 }
 
 body,
@@ -20,6 +21,7 @@ body,
   min-height: 100vh;
   /* overflow-x: hidden;
   overflow-y: hidden; */
+  /* overflow: auto; */
 }
 *,
 *::before,

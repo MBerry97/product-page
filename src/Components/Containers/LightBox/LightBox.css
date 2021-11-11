@@ -5,4 +5,31 @@
   position: absolute;
   z-index: 2;
   top: 0;
+  display: flex;
+  align-items: center;
+  overflow: auto;
+}
+
+.lightBox-desktop-container {
+  margin: auto auto;
+  width: 55rem;
+  height: 72.2rem;
+}
+
+.lightBox-desktop-container > button {
+  background-color: #f7f8fd;
+  position: relative;
+  left: 93%;
+  margin: 3rem 0rem;
+  border-radius: 50%;
+  width: 4rem;
+  height: 4rem;
+  transition: 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lightBox-desktop-container > button:hover {
+  filter: brightness(80%);
 }

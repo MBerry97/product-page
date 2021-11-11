@@ -1,7 +1,19 @@
 import { AppState } from '../types/app.type';
 
+interface ThumbnailIndex {
+  (
+    num: number,
+    stateFn: React.Dispatch<React.SetStateAction<AppState['imageIndex']>>
+  ): void;
+}
+
 // eslint-disable-next-line @typescript-eslint/no-empty-function
-export const updateImageIndexThumbnail = (): void => {};
+export const updateImageIndexThumbnail: ThumbnailIndex = (
+  num,
+  stateFn
+): void => {
+  stateFn(num);
+};
 
 interface CarouselIndex {
   (
