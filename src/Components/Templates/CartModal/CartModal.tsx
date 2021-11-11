@@ -33,7 +33,10 @@ const CartModal: React.FC<IProps> = ({
     return priceAsNum * quantity;
   };
 
-  const handleDeleteClick = (): void => {
+  const handleDeleteClick = (
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ): void => {
+    e.stopPropagation();
     setProduct((prev) => {
       const prevCopy = { ...prev };
       prevCopy.quantity = 0;
@@ -96,7 +99,7 @@ const CartModal: React.FC<IProps> = ({
               </div>
               <motion.button
                 type="button"
-                onClick={() => handleDeleteClick()}
+                onClick={(e) => handleDeleteClick(e)}
                 whileHover={{
                   rotate: ['0deg', '30deg', '-30deg'],
                 }}
