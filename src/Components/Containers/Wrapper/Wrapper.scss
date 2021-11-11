@@ -42,5 +42,7 @@
 
   .main-wrapper:last-of-type {
     height: fit-content;
+    display: flex;
+    align-items: center;
   }
 }
