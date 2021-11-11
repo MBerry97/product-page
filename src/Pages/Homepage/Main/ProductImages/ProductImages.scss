@@ -1,9 +1,10 @@
 @import '../../../../Styles/styles.scss';
 
 .productImages-container {
-  display: flex;
-  justify-content: center;
+  // display: flex;
+  // justify-content: center;
   height: 100%;
+  position: relative;
 
   img {
     width: 100%;
@@ -45,5 +46,10 @@
 
   button:active {
     filter: brightness(87%);
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .productImages-container {
   }
 }
