@@ -15,7 +15,7 @@ const CartModal = (): JSX.Element => {
   const { product, setProduct } = useContext<ProductInfoContext>(appContext);
   const { price, quantity } = product;
 
-  // const modalRef = useRef<HTMLDivElement>();
+  const modalRef = useRef<HTMLElement>(null);
   const getPrice = (): number => {
     const priceAsNum = parseInt(price.slice(1, price.length));
     return priceAsNum * quantity;
@@ -32,7 +32,7 @@ const CartModal = (): JSX.Element => {
   return (
     <motion.section
       className="cartModal"
-      // ref={modalRef}
+      ref={modalRef}
       initial={{
         opacity: 0,
         transform: 'translate3d(0px, -24.5px, 0px)',
