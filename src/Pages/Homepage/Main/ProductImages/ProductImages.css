@@ -58,9 +58,15 @@
 .productImages-thumbnail-container img {
   width: 8.8rem;
   border-radius: 1rem;
+  cursor: pointer;
 }
 
 .productImages-thumbnail-container img:hover {
+  filter: brightness(120%);
+}
+
+.active-thumbnail {
+  outline: 2px solid #ff7d1a;
   filter: brightness(120%);
 }
 

@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { useContext } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -5,7 +7,10 @@ import './ProductImages.css';
 import { appContext } from '../../../../Contexts/appContext';
 import type { ProductImagesContext } from '../../../../types/main.type';
 import { images, imageThumbs } from '../../../../images';
-import { updateImageIndexCarousel } from '../../../../Helpers/updateImageIndex';
+import {
+  updateImageIndexCarousel,
+  updateImageIndexThumbnail,
+} from '../../../../Helpers/updateImageIndex';
 import nextArrow from '../../../../Assets/images/icon-next.svg';
 import previousArrow from '../../../../Assets/images/icon-previous.svg';
 
@@ -26,28 +31,42 @@ const ProductImages: React.FC = (): JSX.Element => {
             exit={{ opacity: 0 }}
           />
         </AnimatePresence>
-        <button
-          type="button"
-          onClick={() =>
-            updateImageIndexCarousel('-', imageIndex, setImageIndex)
-          }
-        >
-          <img src={previousArrow} alt="arrow" />
-        </button>
+        {!isDesktopWidth && (
+          <button
+            type="button"
+            onClick={() =>
+              updateImageIndexCarousel('-', imageIndex, setImageIndex)
+            }
+          >
+            <img src={previousArrow} alt="arrow" />
+          </button>
+        )}
 
-        <button
-          type="button"
-          onClick={() =>
-            updateImageIndexCarousel('+', imageIndex, setImageIndex)
-          }
-        >
-          <img src={nextArrow} alt="arrow" />
-        </button>
+        {!isDesktopWidth && (
+          <button
+            type="button"
+            onClick={() =>
+              updateImageIndexCarousel('+', imageIndex, setImageIndex)
+            }
+          >
+            <img src={nextArrow} alt="arrow" />
+          </button>
+        )}
       </div>
       {isDesktopWidth && (
         <div className="productImages-thumbnail-container">
-          {imageThumbs.map((img) => {
-            return <img src={img} alt="product thumbnail" />;
+          {imageThumbs.map((img, i) => {
+            const isImageActive = i === imageIndex;
+            return (
+              <img
+                src={img}
+                alt="product thumbnail"
+                onClick={() => updateImageIndexThumbnail(i, setImageIndex)}
+                className={
+                  isImageActive ? 'active-thumbnail' : 'inActive-thumbnail'
+                }
+              />
+            );
           })}
         </div>
       )}
