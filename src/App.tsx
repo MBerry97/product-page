@@ -35,7 +35,11 @@ const App: React.FC = (): JSX.Element => {
           setProduct,
         }}
       >
-        <Wrapper additionalClass="page-wrapper">
+        <Wrapper
+          additionalClass={
+            showLightBox ? 'page-wrapper page-wrapper-overflow' : 'page-wrapper'
+          }
+        >
           <HomePage />
         </Wrapper>
         {showLightBox && (
