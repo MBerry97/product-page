@@ -2,7 +2,7 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { AnimatePresence } from 'framer-motion';
 import NavBar from '../../../Components/Templates/NavBar/NavBar';
-
+import './Header.css';
 import { appContext } from '../../../Contexts/appContext';
 import NavSidebar from '../../../Components/Templates/NavBar/NavSidebar/NavSidebar';
 import { HeaderState, HeaderContext } from '../../../types/header.type';
@@ -11,7 +11,7 @@ const Header: React.FC = (): JSX.Element => {
   const [showSidebar, setShowSidebar] =
     useState<HeaderState['showSidebar']>(false);
 
-  const { setShowLightBox, isDesktopWidth, product } =
+  const { setShowLightBox, showLightBox, isDesktopWidth, product } =
     useContext<HeaderContext>(appContext);
 
   const handleSidebarViewClick = (): void => {
@@ -38,13 +38,15 @@ const Header: React.FC = (): JSX.Element => {
   };
 
   return (
-    <header>
-      <NavBar
-        showSideBarFn={handleSidebarViewClick}
-        renderNavListItems={renderNavListItems}
-        isDesktopWidth={isDesktopWidth}
-        product={product}
-      />
+    <>
+      <header className={showLightBox ? 'header' : 'header header-sticky'}>
+        <NavBar
+          showSideBarFn={handleSidebarViewClick}
+          renderNavListItems={renderNavListItems}
+          isDesktopWidth={isDesktopWidth}
+          product={product}
+        />
+      </header>
       <AnimatePresence>
         {showSidebar && (
           <NavSidebar
@@ -53,7 +55,7 @@ const Header: React.FC = (): JSX.Element => {
           />
         )}
       </AnimatePresence>
-    </header>
+    </>
   );
 };
 

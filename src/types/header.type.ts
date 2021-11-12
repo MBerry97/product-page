@@ -10,6 +10,7 @@ export type HeaderContext = {
   >;
   isDesktopWidth: boolean;
   product: AppState['product'];
+  showLightBox: AppState['showLightBox'];
 };
 
 export type NavBarState = {
