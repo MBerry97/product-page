@@ -8,5 +8,6 @@
     width: 100%;
     grid-template-rows: 11.2rem calc(100vh - 11.2rem);
     max-width: 120.2rem;
+    height: 100%;
   }
 }
