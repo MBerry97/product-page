@@ -85,7 +85,10 @@ const CartModal: React.FC<IProps> = ({
       {quantity > 0 && (
         <>
           <Wrapper additionalClass="cartModal-wrapper">
-            <div className="cartModal-productInfo">
+            <div
+              className="cartModal-productInfo"
+              data-testid="cartModal-productInfo"
+            >
               <img
                 src={productThumbnail}
                 alt="product"
@@ -107,6 +110,7 @@ const CartModal: React.FC<IProps> = ({
                   yoyo: Infinity,
                   duration: '0.8',
                 }}
+                aria-labelledby="delete"
               >
                 <img src={deleteIcon} alt="delete" id="cartModal-deleteImg" />
               </motion.button>
