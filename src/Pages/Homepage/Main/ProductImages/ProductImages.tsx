@@ -23,7 +23,7 @@ const ProductImages: React.FC<IProps> = ({ carouselArrows }): JSX.Element => {
   const { imageIndex, setImageIndex, isDesktopWidth, setShowLightBox } =
     useContext<ProductImagesContext>(appContext);
 
-  const handleArrowDisplay = (): boolean => {
+  const showArrows = (): boolean => {
     if (!isDesktopWidth) {
       return true;
     }
@@ -49,7 +49,7 @@ const ProductImages: React.FC<IProps> = ({ carouselArrows }): JSX.Element => {
             onClick={() => setShowLightBox(!!isDesktopWidth)}
           />
         </AnimatePresence>
-        {handleArrowDisplay() && (
+        {showArrows() && (
           <button
             type="button"
             onClick={() =>
@@ -60,7 +60,7 @@ const ProductImages: React.FC<IProps> = ({ carouselArrows }): JSX.Element => {
           </button>
         )}
 
-        {handleArrowDisplay() && (
+        {showArrows() && (
           <button
             type="button"
             onClick={() =>
@@ -72,7 +72,10 @@ const ProductImages: React.FC<IProps> = ({ carouselArrows }): JSX.Element => {
         )}
       </div>
       {isDesktopWidth && (
-        <div className="productImages-thumbnail-container">
+        <div
+          className="productImages-thumbnail-container"
+          data-testid="thumbnail-container"
+        >
           {imageThumbs.map((img, i) => {
             const isImageActive = i === imageIndex;
             return (
