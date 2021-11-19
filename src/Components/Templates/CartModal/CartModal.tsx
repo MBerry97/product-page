@@ -47,6 +47,7 @@ const CartModal: React.FC<IProps> = ({
   return (
     <motion.section
       className="cartModal"
+      data-testid="cartModal"
       ref={modalRef}
       initial={{
         opacity: 0,

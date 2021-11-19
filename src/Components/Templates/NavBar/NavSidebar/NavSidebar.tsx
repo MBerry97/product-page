@@ -15,6 +15,7 @@ const NavSidebar: React.FC<IProps> = ({
   return (
     <motion.div
       className="navSidebar"
+      data-testid="navSidebar"
       initial={{ x: '-100%' }}
       animate={{ x: -1 }}
       transition={{ duration: 0.5 }}
