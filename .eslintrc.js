@@ -5,4 +5,10 @@ module.exports = {
     'plugin:jest/style',
     'plugin:testing-library/react',
   ],
+  rules: {
+    'testing-library/no-render-in-setup': [
+      'error',
+      { allowTestingFrameworkSetupHook: 'beforeEach' },
+    ],
+  },
 };
