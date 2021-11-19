@@ -47,7 +47,7 @@ const ProductInfo = (): JSX.Element => {
             type="button"
             onClick={() => updateProductQuantity('-', setQuantity, quantity)}
           >
-            <img src={minusIcon} alt="plus" />
+            <img src={minusIcon} alt="minus" />
           </button>
           <span>{quantity}</span>
 

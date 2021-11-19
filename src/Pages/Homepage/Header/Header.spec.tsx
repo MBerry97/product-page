@@ -13,7 +13,7 @@ const product = {
 };
 
 describe('<Header />', () => {
-  it('onClick burgerMenu in mobile renders NavSidebar', () => {
+  beforeEach(() => {
     render(
       <Provider
         value={{
@@ -26,11 +26,19 @@ describe('<Header />', () => {
         <Header />
       </Provider>
     );
+  });
+  it('onClick burgerMenu in mobile renders NavSidebar', () => {
     const burgerMenuBtn = screen.getByRole('button', { name: /menu/ });
     expect(screen.queryByTestId('navSidebar')).not.toBeInTheDocument();
 
     userEvent.click(burgerMenuBtn);
 
     expect(screen.getByTestId('navSidebar')).toBeInTheDocument();
+  });
+  it('onClick cart opens the modal', () => {
+    const cartBtn = screen.getByRole('button', { name: /cart/ });
+    expect(screen.queryByTestId('cartModal')).not.toBeInTheDocument();
+    userEvent.click(cartBtn);
+    expect(screen.getByTestId('cartModal')).toBeInTheDocument();
   });
 });
