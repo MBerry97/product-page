@@ -40,7 +40,11 @@ const NavBar: React.FC<IProps> = ({
             <CartModal showCart={showCart} setShowCart={setShowCart} />
           )}
         </AnimatePresence>
-        <button type="button" onClick={() => setShowCart((prev) => !prev)}>
+        <button
+          type="button"
+          onClick={() => setShowCart((prev) => !prev)}
+          data-testid="cart-btn"
+        >
           <img src={cart} alt="cart" />
           <AnimatePresence>
             {product.quantity > 0 && (
