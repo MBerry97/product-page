@@ -20,7 +20,7 @@
   "scripts": {
     "start": "craco start",
     "build": "craco build",
-    "test": "jest",
+    "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -51,7 +51,6 @@
     "eslint-plugin-jest": "^25.2.4",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-testing-library": "^5.0.0",
-    "jest": "^27.3.1",
     "jest-environment-jsdom": "^27.3.1",
     "prettier": "^2.4.1",
     "ts-jest": "27.0.1",

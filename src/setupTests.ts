@@ -1,3 +1,5 @@
+import '@testing-library/jest-dom';
+
 /** @type {import('ts-jest/dist/types').InitialOptionsTsJest} */
 module.exports = {
   preset: 'ts-jest',
@@ -7,5 +9,4 @@ module.exports = {
       '<rootDir>/src/__mocks__/fileMock.js',
     '\\.(css|scss)$': 'identity-obj-proxy',
   },
-  setupFilesAfterEnv: ['./src/jest.setup.ts'],
 };
