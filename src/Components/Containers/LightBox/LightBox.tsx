@@ -16,10 +16,17 @@ const LightBox: React.FC<IProps> = ({
   setShowLightBox,
 }): JSX.Element => {
   return (
-    <section className="lightBox">
+    <section className="lightBox" data-testid="lightbox">
       {isDesktopWidth && (
-        <div className="lightBox-desktop-container">
-          <button type="button" onClick={() => setShowLightBox(false)}>
+        <div
+          className="lightBox-desktop-container"
+          data-testid="lightbox-desktop"
+        >
+          <button
+            type="button"
+            onClick={() => setShowLightBox(false)}
+            aria-label="close-lightbox"
+          >
             <img src={iconClose} alt="close" />
           </button>
 

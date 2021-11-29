@@ -10,7 +10,11 @@ const Wrapper: React.FC<IProps> = ({
   children,
   additionalClass,
 }): JSX.Element => {
-  return <div className={`wrapper ${additionalClass}`}>{children}</div>;
+  return (
+    <div className={`wrapper ${additionalClass}`} data-testid="wrapper">
+      {children}
+    </div>
+  );
 };
 
 export default Wrapper;

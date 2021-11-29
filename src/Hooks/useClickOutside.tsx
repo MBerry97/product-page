@@ -3,9 +3,17 @@
 // eslint-disable-next-line no-unused-vars
 import { useEffect } from 'react';
 
-const useClickOutside = (ref, callback, dependency) => {
-  const handleClick = (e) => {
-    if (ref.current && !ref.current.contains(e.target)) {
+type clickOutSideType = {
+  (
+    ref: React.RefObject<HTMLElement>,
+    callback: React.Dispatch<React.SetStateAction<boolean>>,
+    dependency: boolean
+  ): void;
+};
+
+const useClickOutside: clickOutSideType = (ref, callback, dependency) => {
+  const handleClick = (e: MouseEvent) => {
+    if (ref.current && !ref.current.contains(e.target as Node)) {
       callback(false);
     }
   };
