@@ -36,7 +36,12 @@ const ProductImages: React.FC<IProps> = ({ carouselArrows }): JSX.Element => {
   };
 
   return (
-    <div className="productImages-container">
+    <motion.div
+      className="productImages-container"
+      initial={{ x: '-1500px' }}
+      animate={{ x: '0px' }}
+      transition={{ duration: 0.6, type: 'tween' }}
+    >
       <div className="productImage-carousel">
         <AnimatePresence>
           <motion.img
@@ -91,7 +96,7 @@ const ProductImages: React.FC<IProps> = ({ carouselArrows }): JSX.Element => {
           })}
         </div>
       )}
-    </div>
+    </motion.div>
   );
 };
 

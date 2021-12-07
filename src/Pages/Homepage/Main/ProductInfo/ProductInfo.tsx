@@ -1,4 +1,5 @@
 import React, { useContext, useState } from 'react';
+import { motion } from 'framer-motion';
 import './ProductInfo.css';
 import { appContext } from '../../../../Contexts/appContext';
 import plusIcon from '../../../../Assets/images/icon-plus.svg';
@@ -25,7 +26,12 @@ const ProductInfo = (): JSX.Element => {
   };
 
   return (
-    <section className="productInfo-container">
+    <motion.section
+      className="productInfo-container"
+      initial={{ x: '1500px' }}
+      animate={{ x: '0px' }}
+      transition={{ duration: 0.6, type: 'tween' }}
+    >
       <h1>SNEAKER COMPANY</h1>
       <h2>Fall Limited Edition Sneakers</h2>
       <p>
@@ -66,7 +72,7 @@ const ProductInfo = (): JSX.Element => {
           onClickFn={() => handleAddToCartBtnClick()}
         />
       </div>
-    </section>
+    </motion.section>
   );
 };
 
